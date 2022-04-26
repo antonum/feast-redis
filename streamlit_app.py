@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 from credit_model import CreditScoringModel
 
 st.set_page_config(layout="wide")
-model = CreditScoringModel()
+model = CreditScoringModel(st)
 if not model.is_model_trained():
     raise Exception("The credit scoring model has not been trained. Please run run.py.")
 

@@ -40,7 +40,7 @@ class CreditScoringModel:
     model_filename = "model.bin"
     encoder_filename = "encoder.bin"
 
-    def __init__(self):
+    def __init__(self,st):
         # Load model
         if Path(self.model_filename).exists():
             self.classifier = joblib.load(self.model_filename)
