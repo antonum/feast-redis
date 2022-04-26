@@ -55,6 +55,7 @@ class CreditScoringModel:
 
         # Set up feature store
         self.fs = feast.FeatureStore(repo_path="creditscore")
+        self.fs.config.online_store.connection_string=st.secrets.redis_conection_string
 
     def train(self, loans):
         train_X, train_Y = self._get_training_features(loans)
