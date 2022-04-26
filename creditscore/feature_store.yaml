@@ -1,0 +1,7 @@
+project: creditscore
+registry: data/registry.db
+provider: local
+online_store:
+    #path: data/online_store.db
+    type: redis
+    #connection_string: localhost:6379
