@@ -1,5 +1,6 @@
 import datetime
 from collections import OrderedDict
+from PIL import Image
 
 import pandas as pd
 import shap
@@ -9,7 +10,7 @@ from matplotlib import pyplot as plt
 from credit_model import CreditScoringModel
 
 st.set_page_config(layout="wide")
-model = CreditScoringModel(st)
+model = CreditScoringModel(st.secrets.get("redis_connection_string"))
 if not model.is_model_trained():
     raise Exception("The credit scoring model has not been trained. Please run run.py.")
 
@@ -64,6 +65,8 @@ def get_loan_request():
 
 # Application
 st.title("Loan Application")
+#st.write(st.secrets.get("redis_connection_string"))
+#st.write(st.secrets.get("redis_connection_string11"))
 
 # Input Side Bar
 st.header("User input:")
@@ -115,3 +118,21 @@ with mid:
     plt.title("Feature importance based on SHAP values (Bar)")
     shap.summary_plot(shap_values, X, plot_type="bar")
     st.pyplot(bbox_inches="tight")
+
+st.header("Feast Configuration")
+left, mid, right = st.columns(3)
+with left:
+    st.write("feature_store.yaml")
+    code = '''project: creditscore
+    registry: data/registry.db
+    provider: local
+    online_store:
+        type: redis
+        connection_string: yyy.cloud.redislabs.com:14783,password=xxx'''
+    st.code(code, language='yaml')
+
+    st.markdown("Create your own free Redis DB at [Redis Cloud](https://app.redislabs.com/#/login)")
+with mid:
+    image = Image.open('diagram.png')
+    st.image(image, caption='Solution diagram')
+

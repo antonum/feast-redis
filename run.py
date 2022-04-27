@@ -9,11 +9,12 @@ loans = pd.read_parquet("creditscore/data/loan_table.parquet")
 # Create model
 model = CreditScoringModel()
 
-# Train model (using Redshift for zipcode and credit history features)
+# Train model (using Parquet for zipcode and credit history features)
 if not model.is_model_trained():
+    print("Model not trained. Performing training.")
     model.train(loans)
 
-# Make online prediction (using DynamoDB for retrieving online features)
+# Make online prediction (using Redis for retrieving online features)
 loan_request = {
     "zipcode": [76104],
     "dob_ssn": ["19630621_4278"],

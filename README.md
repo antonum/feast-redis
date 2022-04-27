@@ -1,6 +1,15 @@
 # Feast + Redis demo application
 
 Adaptation of https://github.com/feast-dev/feast-aws-credit-scoring-tutorial using Redis as Online Store and default local files as Offline Store.
+![solution diagram](diagram.png)
+
+## Live demo
+
+Live demo of this app, using [Streamlit Cloud](https://streamlit.io/cloud) and [Redis Cloud](https://app.redislabs.com/#/login)
+
+https://share.streamlit.io/antonum/feast-redis/main
+
+
 
 ## Setup 
 
@@ -29,10 +38,10 @@ python run.py
 streamlit run streamlit_app.py
 ```
 
-## Redis Connection
-In order to store connection string/password in streamlit secrets, this project overrides redis connection string.
+## Redis Connection override for Streamlit
+In order to store connection string/password in streamlit secrets, you can override redis connection string.
 
-To supply your own - add file `.streamlit/secrets.toml` with the following content:
+Local use - add file `.streamlit/secrets.toml` with the following content:
 ```
 redis_connection_string = "yyy.cloud.redislabs.com:14783,password=xxx"
 ```

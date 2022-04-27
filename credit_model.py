@@ -40,7 +40,7 @@ class CreditScoringModel:
     model_filename = "model.bin"
     encoder_filename = "encoder.bin"
 
-    def __init__(self,st):
+    def __init__(self,secret=""):
         # Load model
         if Path(self.model_filename).exists():
             self.classifier = joblib.load(self.model_filename)
@@ -55,7 +55,8 @@ class CreditScoringModel:
 
         # Set up feature store
         self.fs = feast.FeatureStore(repo_path="creditscore")
-        self.fs.config.online_store.connection_string=st.secrets.get("redis_connection_string")
+        if secret and (":" in secret):
+            self.fs.config.online_store.connection_string=secret
 
     def train(self, loans):
         train_X, train_Y = self._get_training_features(loans)
