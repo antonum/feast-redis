@@ -9,6 +9,7 @@ Live demo of this app, using [Streamlit Cloud](https://streamlit.io/cloud) and [
 
 https://share.streamlit.io/antonum/feast-redis/main
 
+![live demo](demo.png)
 
 
 ## Setup 
