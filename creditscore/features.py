@@ -6,7 +6,7 @@ from feast import (Entity, Feature, FeatureView, RedshiftSource,
 zipcode = Entity(name="zipcode", value_type=ValueType.INT64)
 
 zipcode_source = FileSource(
-    path="/Users/anton.umnikov/REDIS/Feast/creditscore/data/zipcode_table.parquet",
+    path="creditscore/data/zipcode_table.parquet",
     event_timestamp_column="event_timestamp",
     created_timestamp_column="created_timestamp",
 )
@@ -33,7 +33,7 @@ dob_ssn = Entity(
 )
 
 credit_history_source = FileSource(
-    path="/Users/anton.umnikov/REDIS/Feast/creditscore/data/credit_history.parquet",
+    path="creditscore/data/credit_history.parquet",
     event_timestamp_column="event_timestamp",
     created_timestamp_column="created_timestamp",
 )

@@ -54,9 +54,9 @@ class CreditScoringModel:
             self.encoder = OrdinalEncoder()
 
         # Set up feature store
-        self.fs = feast.FeatureStore(repo_path="creditscore")
-        if secret and (":" in secret):
-            self.fs.config.online_store.connection_string=secret
+        self.fs = feast.FeatureStore(repo_path="creditscore/")
+        #if secret and (":" in secret):
+        #    self.fs.config.online_store.connection_string=secret
 
     def train(self, loans):
         train_X, train_Y = self._get_training_features(loans)
@@ -71,11 +71,13 @@ class CreditScoringModel:
 
         self._fit_ordinal_encoder(training_df)
         self._apply_ordinal_encoding(training_df)
-
+        for col in training_df.columns:
+            print(col)
+        #print(training_df.head())
         train_X = training_df[
             training_df.columns.drop(self.target)
             .drop("event_timestamp")
-            .drop("created_timestamp")
+            .drop("created_timestamp__")
             .drop("loan_id")
             .drop("zipcode")
             .drop("dob_ssn")

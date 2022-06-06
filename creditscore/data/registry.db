@@ -2,17 +2,17 @@
 }
 _
 dob_ssn<Date of birth and last four digits of social security number"dob_ssnJcreditscore
-‚°›“Èßõ-‚°›“Èßõ-
+çñù”ÀãAçñù”ÀãA
 ?
 !
 zipcode"zipcodeJcreditscore
-‚°›“Ø§ø-‚°›“Ø§ø-
+çñù” »„Açñù” »„A
 B
 $
 __dummy"
 __dummy_idJcreditscore
-‚°›“˜øò-‚°›“€èú-1"$529a5ba4-2975-48ba-b1f2-fd7ee5953f08*ª°›“€êë2¼
-„
+çñù”€®þ@çñù”€“‡A1"$96c3859d-2731-414e-87d7-0366db441e9f*òù”ÐÚÒ€2ú
+Â
 zipcode_featurescreditscorezipcode"
 city"	
 state"
@@ -20,10 +20,10 @@ __dummy_idJcreditscore
 tax_returns_filed"
 
 population"
-total_wages2€†°–:ïevent_timestamp*created_timestampZIG/Users/anton.umnikov/REDIS/Feast/creditscore/data/zipcode_table.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢G/Users/anton.umnikov/REDIS/Feast/creditscore/data/zipcode_table.parquet@3
-‚°›“°»Ú-’°›“ðÈÜ
-ˆªëü²‡°›“2™
-á
+total_wages2€†°–:­event_timestamp*created_timestampZ(&creditscore/data/zipcode_table.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢&creditscore/data/zipcode_table.parquet@3
+çñù”ØÁà@ùñù”ÐãøŸ
+ëëÉþØþìËêñù”2×
+Ÿ
 credit_historycreditscoredob_ssn"
 credit_card_due"
 mortgage_due"
@@ -34,6 +34,6 @@ hard_pulls"
 missed_payments_2y"
 missed_payments_1y"
 missed_payments_6m"
-bankruptcies2€†°–:ñevent_timestamp*created_timestampZJH/Users/anton.umnikov/REDIS/Feast/creditscore/data/credit_history.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢H/Users/anton.umnikov/REDIS/Feast/creditscore/data/credit_history.parquet@3
-‚°›“Èæ-ª°›“€ÍË
-’ªëü°¸ ‘‡°›“bËevent_timestamp*created_timestampZJH/Users/anton.umnikov/REDIS/Feast/creditscore/data/credit_history.parquet¢H/Users/anton.umnikov/REDIS/Feast/creditscore/data/credit_history.parquetªcreditscorebÉevent_timestamp*created_timestampZIG/Users/anton.umnikov/REDIS/Feast/creditscore/data/zipcode_table.parquet¢G/Users/anton.umnikov/REDIS/Feast/creditscore/data/zipcode_table.parquetªcreditscore
+bankruptcies2€†°–:¯event_timestamp*created_timestampZ)'creditscore/data/credit_history.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢'creditscore/data/credit_history.parquet@3
+çñù”À™ð@òù”àš®€
+ùëÉþØØÜ êñù”b½event_timestamp*created_timestampZ)'creditscore/data/credit_history.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢'creditscore/data/credit_history.parquetªcreditscoreb»event_timestamp*created_timestampZ(&creditscore/data/zipcode_table.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢&creditscore/data/zipcode_table.parquetªcreditscore

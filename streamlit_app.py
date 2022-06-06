@@ -99,7 +99,7 @@ elif result == 1:
 # Feature importance
 st.header("Feature Importance")
 
-@st.cache
+#@st.cache
 def cache_func():
     X = pd.read_parquet("creditscore/data/training_dataset_sample.parquet")
     explainer = shap.TreeExplainer(model.classifier)
